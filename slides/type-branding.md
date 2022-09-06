@@ -1,17 +1,12 @@
 ---
-# try also 'default' to start simple
 theme: slidev-theme-geist
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+class: text-center
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: true
-# persist drawings in exports and build
 drawings:
   persist: false
-# use UnoCSS (experimental)
 css: unocss
+title: Брендирование
 ---
 
 # Брендирование
@@ -31,9 +26,11 @@ text-align: center;
 }
 </style>
 
+
 ---
 clicks: 4
 ---
+
 # Что же это такое Брендирование?
 
 <v-clicks>
@@ -57,6 +54,7 @@ h1 {
   -moz-text-fill-color: transparent;
 }
 </style>
+
 
 ---
 
@@ -96,6 +94,7 @@ function authorOfPost(postId: number): Promise<User> {
 }
 </style>
 
+
 ---
 clicks: 4
 ---
@@ -124,9 +123,11 @@ function authorOfPost(postId:Post['id']): Promise<User> {
 ```
 </div>
 
+
 ---
 clicks: 3
 ---
+
 ## Тут к нам на помощь и приходит Брендирование (Brand Types)
 
 
@@ -156,7 +157,8 @@ clicks: 3
 
 ---
 clicks: 5
---- 
+---
+
 ## Что же такое ‘nominal types’?
  
 <div v-click="1">
@@ -181,9 +183,11 @@ type Brand<K, T> = K & { __brand: T };
 <h3>Да! 😃</h3>
 </div>
 
+
 ---
 clicks: 6
 ---
+
 ## Что мы имеем:
 
 <v-clicks>
@@ -202,9 +206,11 @@ clicks: 6
 ```
 </v-click>
 
+
 ---
 clicks: 3
 ---
+
 #### Чтобы избежать подобного, можно использовать преимущество TypeScript - интерфейсы могут быть рекурсивными
 
 <v-clicks at="1">
@@ -222,6 +228,7 @@ body: string;
 }
 ```
 </v-clicks>
+
 
 ---
 clicks: 4
@@ -246,6 +253,7 @@ euroToUsd(12); // error - wrong type ❌
 euroToUsd(usdValue); // error - wrong type ❌
 euroToUsd(euroValue); // WORKS!!! ✅
 ```
+
 
 ---
 clicks: 5
