@@ -248,6 +248,16 @@
     "@slidev/types" "0.35.6"
     js-yaml "^4.1.0"
 
+"@slidev/theme-apple-basic@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@slidev/theme-apple-basic/-/theme-apple-basic-0.20.0.tgz#38a8ddce2ae6c23125f3d12322cf77352d6dc03e"
+  integrity sha512-sjgxAyn63TNHsiwT/Iz2D8IjpuOg/x8l+nG2TTH3zg8XChIo7uYcNNApWH+i5zuBfaNHHUOaGLPaZw5s6fINQg==
+  dependencies:
+    "@slidev/types" "^0.22.7"
+    codemirror-theme-vars "^0.1.1"
+    prism-theme-vars "^0.2.2"
+    theme-vitesse "^0.1.12"
+
 "@slidev/theme-default@*":
   version "0.21.2"
   resolved "https://registry.yarnpkg.com/@slidev/theme-default/-/theme-default-0.21.2.tgz#28db9f074cd0b17d19ca6ccd1d4c75db7a24b026"
