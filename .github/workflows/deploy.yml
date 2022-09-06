@@ -11,7 +11,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Install slidev
-        run:  npm i -g @slidev/cli
+        run:  npm i -g @slidev/cli --base talk-type-branding
       - name: Build
         run: slidev build
       - name: Deploy pages
