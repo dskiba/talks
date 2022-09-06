@@ -24,3 +24,6 @@ git push
 In the first deploy you need to config github pages in Settings point to the `gh-pages` branch.
 
 ## Past talks
+
+|Name|Presented at|Language|Slides Link|
+|-|-|-|-|
