@@ -46,7 +46,6 @@ clicks: 4
 
 <h3 v-click="4" class="center text-center">Давайте выясним через пример 📝</h3>
 
-
 <style>
 h1 {
   background-color: #2B90B6;
