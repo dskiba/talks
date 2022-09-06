@@ -13,7 +13,7 @@ jobs:
       - name: Install slidev
         run:  npm i -g @slidev/cli
       - name: Build
-        run: slidev build --base <name_of_repo>
+        run: slidev build --base talk-type-branding
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
