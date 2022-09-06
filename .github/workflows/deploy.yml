@@ -16,12 +16,12 @@ jobs:
         run: |
           echo ${{ env.slide }}
           npm install
-          npm run build -- ./slides/${{ env.slide }}.md --base /talks/${{ env.slide }}/
+          npm run build -- ./slides/${{ env.slide }}.md --base ${{ env.slide }}/
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: talks/dist # The folder the action should deploy.
+          folder: dist # The folder the action should deploy.
           target-folder: ${{ env.slide }}
           clean: false
 
