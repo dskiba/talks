@@ -86,7 +86,7 @@ function authorOfPost(postId: number): Promise<User> {
 
 <arrow v-click="1" x1="720" y1="420" x2="520" y2="445" color="#564" width="3" arrowSize="1" />
 
-  <img src="./assets/brigada.gif"  width="260" height="146" className="gif" v-click="1"/>
+  <img src="/assets/brigada.gif"  width="260" height="146" className="gif" v-click="1"/>
 
 <style>
 .gif {
