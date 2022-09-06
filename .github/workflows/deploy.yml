@@ -1,34 +1,37 @@
-name: Deploy pages
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
+name: Build and Deploy
+on: [push]
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
+    if: ${{ contains(github.event.head_commit.message, 'deploy') }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.5
-        with:
-          node-version: '14'
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: Install dependencies
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Set env
         run: |
-          yarn install
-      - name: Build application
+          echo "slide=$(echo '${{ github.event.head_commit.message }}' | cut -d' ' -f 2)" >> $GITHUB_ENV
+
+      - name: Install and Build 🔧
         run: |
-          yarn build
-          cp dist/index.html dist/404.html
-      - name: Deploy pages
-        uses: crazy-max/ghaction-github-pages@v2.3.0
+          echo ${{ env.slide }}
+          npm install
+          npm run build -- ./slides/${{ env.slide }}.md --base /talks/${{ env.slide }}/
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
+          target-folder: ${{ env.slide }}
+          clean: false
+
+      - name: Checkout for README 🛎️
+        uses: actions/checkout@v2.3.1
+      - name: Update README
+        run: |
+          echo "|${{ env.slide }}|-|-|[link](https://guisso.dev/talks/${{ env.slide }}/)|" >> README.md
+      - name: Commit README changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "readme: add ${{ env.slide }} link"
+          file_pattern: README.md
