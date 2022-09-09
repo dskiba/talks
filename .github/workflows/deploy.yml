@@ -22,7 +22,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_KEY }}
           branch: gh-pages # The branch the action should deploy to.
-          folder: /slides/dist # The folder the action should deploy.
+          folder: slides/dist # The folder the action should deploy.
           target-folder: /${{ env.slide }}
 
       - name: Checkout for README 🛎️
