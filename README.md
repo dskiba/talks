@@ -27,3 +27,4 @@ In the first deploy you need to config github pages in Settings point to the `gh
 
 |Name|Presented at|Language|Slides Link|
 |-|-|-|-|
+|type-branding|-|-|[link](https://dskiba.github.io/talks/type-branding/)|
