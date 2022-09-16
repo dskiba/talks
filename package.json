@@ -1,5 +1,5 @@
 {
-  "name": "type-branding",
+  "name": "talks",
   "private": true,
   "scripts": {
     "build": "slidev build",
