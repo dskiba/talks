@@ -29,3 +29,4 @@ In the first deploy you need to config github pages in Settings point to the `gh
 |-|-|-|-|
 |type-branding|-|Russian|[link](https://dskiba.github.io/talks/type-branding/)|
 |type-branding-en|-|English|[link](https://dskiba.github.io/talks/type-branding-en/)|
+|type-branding-en|-|-|[link](https://dskiba.github.io/talks/type-branding-en/)|
